@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://thymeleaf.org"
+>
+<div th:replace="~{admin/header :: page-head}"></div>
+<body>
+    <div th:replace="~{admin/header :: top-navbar}"></div>
+
+<div class="container">
+    <div class="row col-md-8 offset-md-2">
+        <div class="card" style="width: 100%">
+            <div class="card-header">
+                <h2 class="text-center">Create Project</h2>
+            </div>
+            <div class="card-body">
+                <form role="form" method="post" th:action="@{/admin/projects}" th:object="${project}">
+                    <div class="mb-3">
+                        <label class="form-label">Title</label>
+                        <input
+                                type="text"
+                                class="form-control"
+                                id="Enter project title"
+                                placeholder="Project title"
+                                name="title"
+                                th:field="*{title}"
+                        />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Description</label>
+                        <textarea
+                                class="form-control"
+                                id="description"
+                                placeholder="Enter project short description"
+                                row="3"
+                                name="description"
+                                th:field="*{shortDescription}"
+                        ></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Content</label>
+                        <textarea
+                                class="form-control"
+                                id="content"
+                                placeholder="Enter project details"
+                                row="12"
+                                name="content"
+                                th:field="*{content}"
+                        ></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="~{admin/footer :: footer}"></div>
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+    <script src="../../static/js/jquery.min.js"
+            th:src="@{/js/jquery.min.js}"
+    ></script>
+    <script src="../../static/js/jquery-migrate-3.0.1.min.js"
+            th:src="@{/js/jquery-migrate-3.0.1.min.js}"
+    ></script>
+    <script src="../../static/js/popper.min.js"
+            th:src="@{/js/popper.min.js}"
+    ></script>
+    <script src="../../static/js/bootstrap.min.js"
+            th:src="@{/js/bootstrap.min.js}"
+    ></script>
+    <script src="../../static/js/jquery.easing.1.3.js"
+            th:src="@{/js/jquery.easing.1.3.js}"
+    ></script>
+    <script src="../../static/js/jquery.waypoints.min.js"
+            th:src="@{/js/jquery.waypoints.min.js}"
+    ></script>
+    <script src="../../static/js/jquery.stellar.min.js"
+            th:src="@{/js/jquery.stellar.min.js}"
+    ></script>
+    <script src="../../static/js/owl.carousel.min.js"
+            th:src="@{/js/owl.carousel.min.js}"
+    ></script>
+    <script src="../../static/js/jquery.magnific-popup.min.js"
+            th:src="@{/js/jquery.magnific-popup.min.js}"
+    ></script>
+    <script src="../../static/js/jquery.animateNumber.min.js"
+            th:src="@{/js/jquery.animateNumber.min.js}"
+    ></script>
+    <script src="../../static/js/bootstrap-datepicker.js"
+            th:src="@{/js/bootstrap-datepicker.js}"
+    ></script>
+    <script src="../../static/js/jquery.timepicker.min.js"
+            th:src="@{/js/jquery.timepicker.min.js}"
+    ></script>
+    <script src="../../static/js/scrollax.min.js"
+            th:src="@{/js/scrollax.min.js}"
+    ></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"
+            th:src="@{https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false}"
+    ></script>
+    <script src="../../static/js/google-map.js"
+            th:src="@{/js/google-map.js}"
+    ></script>
+
+    <script src="../../static/js/main.js"
+            th:src="@{/js/main.js}"
+    ></script>
+</body>
+</html>
